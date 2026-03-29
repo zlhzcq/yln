@@ -5,34 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>完整背景图</title>
     <style>
-        /* 重置默认样式，确保根元素占满全屏 */
         html, body {
             margin: 0;
             padding: 0;
-            height: 100%; /* 必须设置高度，否则背景图无法铺满视口 */
+            height: 100vh;
         }
-
         body {
-            /* 1. 设置背景图片地址 */
-            background-image: url("https://pixiv.re/83110343-1.jpg");
-            
-            /* 2. 禁止图片重复 */
-            background-repeat: no-repeat;
-            
-            /* 3. 核心属性：保持图片比例完整显示，不裁剪 */
-            background-size: contain;
-            
-            /* 4. 图片居中 */
-            background-position: center;
-            
-            /* 5. 留白背景色（可修改为你喜欢的颜色，如白色 #ffffff） */
-            background-color: #000000;
+            /* 直接使用 img 标签确保图片加载，避免背景图跨域问题 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+            margin: 0;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
     </style>
 </head>
 <body>
+    <img src="https://pixiv.re/83110343-1.jpg" alt="背景图">
 </body>
 </html>
+
 
 
 
